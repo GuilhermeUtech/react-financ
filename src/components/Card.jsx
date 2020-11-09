@@ -16,7 +16,8 @@ export default props => {
                 {
                     props.title === "Cartão de crédito" ?
                     <Button variant="contained" color="secondary" onClick={ e => props.pagarCartao(props.valor)}>Pagar</Button>:
-                    <Button variant="contained" color="secondary" onClick={ e => props.pagarGastos(props.valor)}>Pagar</Button>    
+                    props.title === "Outros Gastos" ?
+                    <Button variant="contained" color="secondary" onClick={ e => props.pagarGastos(props.valor)}>Pagar</Button>: ""
                 }
             </form>
         </div>
