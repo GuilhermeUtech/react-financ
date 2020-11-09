@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Card from './Card'
+import AddGasto from './AddGasto'
 import './componentsCss/Display.css'
 
 export default props => {
@@ -32,9 +33,10 @@ export default props => {
         }
     }
 
-
     return(
-        <div className="displayCards">
+        <Fragment>
+            <div className="displayCards">
+            <h2>Controle financeiro</h2>
             <Card 
                 title="Saldo"
                 alterarSaldo={alterarSaldo}
@@ -55,6 +57,10 @@ export default props => {
                 pagarGastos={pagarGastos}>
             </Card>
         </div>
+        <div className="addNewBills">
+            <AddGasto/>
+        </div>
+        </Fragment>
         
     );
 }
